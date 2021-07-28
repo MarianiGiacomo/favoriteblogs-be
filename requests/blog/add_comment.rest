@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/blogs/5d75fcc36a4ca914789007ea/comments
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWQiOiI1ZDBiOTEwYTM2NTY5YjJjOTFkYjM2Y2UiLCJpYXQiOjE1Njc1ODQzMzh9.2K4Oc2N0VOB2vw5E7586Uwhbdxmkksd6BhJ_GW-B4so
+
+{
+    "comment": "this is a comment",
+    "timeStamp": "timestamp here",
+    "blog": "5d75fcc36a4ca914789007ea"
+}

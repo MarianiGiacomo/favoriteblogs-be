@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWQiOiI1ZDc2NTBkNWNlNjM2MDQyYWExMGZhMjkiLCJpYXQiOjE1NjgwMzUzOTl9.ZAQSDfJcfV4baLqaIX_6N4sdUF8mNxMYSGjwKxctzAo
+
+{
+    "title": "this is with test1 token",
+    "author": "whoever",
+    "url": "https://www.thisisablog.com",
+    "likes": 1
+}
