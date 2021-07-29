@@ -3,7 +3,7 @@ const path = require('path');
 
 frontEndRouter.get('/*', (req, res, next) => {
 	try {
-		res.sendFile(path.dirname('../../dist/index.html'));
+		res.sendFile('index.html', { root: '../../' });
 	} catch (error) {
 		console.log(error)
 		next(error);
