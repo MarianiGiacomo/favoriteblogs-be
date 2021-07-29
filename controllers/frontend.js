@@ -2,9 +2,8 @@ const frontEndRouter = require('express').Router();
 const path = require('path');
 
 frontEndRouter.get('/*', (req, res, next) => {
-	console.log('FrontendRouter')	
 	try {
-		res.sendFile(path.dirname('/dist'));
+		res.sendFile(path.dirname('/dist/index.html'));
 	} catch (error) {
 		console.log(error)
 		next(error);
