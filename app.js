@@ -23,7 +23,7 @@ const connectToMongo = async () => {
 connectToMongo();
 
 app.use(compression());
-// app.use(express.static('dist'));
+app.use(express.static('dist'));
 app.use(cors());
 app.use(express.json());
 app.use(middleware.tokenExtractor);
