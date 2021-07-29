@@ -1,4 +1,5 @@
 const frontEndRouter = require('express').Router();
+const path = require('path');
 
 frontEndRouter.get('/*', (req, res, next) => {
 	console.log('FrontendRouter')	
@@ -7,7 +8,7 @@ frontEndRouter.get('/*', (req, res, next) => {
 	} catch (error) {
 		console.log(error)
 		next(error);
-	}
+	}	
 })
 
 module.exports = frontEndRouter;
