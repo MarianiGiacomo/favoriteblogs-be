@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 
 const unknownEndpoint = (request, response) => {
   if(/^(\/users.*|\/blogs.*)$/.test(request.url)){
@@ -6,6 +7,15 @@ const unknownEndpoint = (request, response) => {
   }
   response.status(404).send({ error: 'unknown endpoint' });
 };
+
+const checkDbConnection = (request, response, next ) => {
+	const state = mongoose.connection.readyState;
+	if(!( state === 1 || state === 2 )) {
+		response.statusMessage = 'Connection with the database failed'
+		response.status(500).end()
+	}
+	next();
+}
 
 const errorHandler = (error, request, response) => {
   console.error(error.message);
@@ -36,6 +46,7 @@ const tokenExtractor = (request, response, next) => {
 
 module.exports = {
   unknownEndpoint,
+	checkDbConnection,
   errorHandler,
   tokenExtractor
 };

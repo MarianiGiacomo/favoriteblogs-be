@@ -38,6 +38,7 @@ usersRouter.post('/', async (request, response, next) => {
     }
   } catch (error) {
     if(error.errors.username.kind === 'unique') {
+			console.log('Unique username error', error)
       response.statusMessage = 'Username is taken';
       response.status(403).end();
     }
