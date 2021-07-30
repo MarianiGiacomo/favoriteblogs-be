@@ -1,5 +1,6 @@
 # MAC local file
 .DS_Store
+
 # Logs
 logs
 *.log
