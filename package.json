@@ -1,7 +1,7 @@
 {
-  "name": "blogilista-backend",
+  "name": "Favorite Blogs BE",
   "version": "1.0.0",
-  "description": "App for saving and sharing favorite blogs",
+  "description": "A Web App for saving and sharing favorite blogs",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
@@ -9,7 +9,6 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "start:test": "cross-env NODE_ENV=test node index.js",
     "lint": "eslint .",
-    "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect",
     "build:ui": "rm -rf dist && cd ../blog-app-fe && npm run build && cp -r dist ../blog-app-be"
   },
@@ -45,10 +44,8 @@
     "lodash": "^4.17.21",
     "mongoose": "^5.13.3",
     "mongoose-unique-validator": "^2.0.3",
-    "snyk": "^1.666.0"
   },
   "jest": {
     "testEnvironment": "node"
   },
-  "snyk": true
 }
