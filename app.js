@@ -24,12 +24,7 @@ const connectToMongo = async () => {
 connectToMongo();
 
 app.use(compression());
-app.use(helmet({
-	contentSecurityPolicy: true,
-	frameguard: {
-		action: 'deny'
-	}
-}));
+app.use(helmet());
 app.use(express.static('dist'));
 app.use(cors());
 app.use(express.json());
