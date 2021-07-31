@@ -25,6 +25,11 @@ connectToMongo();
 
 app.use(compression());
 app.use(helmet());
+app.use(helmet.hsts({
+	maxAge: 63072000,
+	preload: true
+}));
+app.use(helmet.contentSecurityPolicy());
 app.use(express.static('dist'));
 app.use(cors());
 app.use(express.json());
