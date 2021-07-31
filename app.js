@@ -35,7 +35,7 @@ app.use(helmet.contentSecurityPolicy({
 	directives:{
 		defaultSrc:["'self'"],
 		scriptSrc:["'self'"],
-		styleSrc:["'self'",'cdn.jsdelivr.net', 'fonts.googleapis.com'],
+		styleSrc:["'self'",'cdn.jsdelivr.net', 'fonts.googleapis.com', 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='],
 		fontSrc:["'self'",'cdn.jsdelivr.net', 'fonts.googleapis.com', 'fonts.gstatic.com', 'data:']
 	}
 }));
