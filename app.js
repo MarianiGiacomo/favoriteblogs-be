@@ -36,6 +36,7 @@ app.use(helmet.contentSecurityPolicy({
 		defaultSrc:["'self'"],
 		scriptSrc:["'self'"],
 		styleSrc:["'self'",'cdn.jsdelivr.net'],
+		fontSrc:["'self'",'cdn.jsdelivr.net', 'fonts.googleapis.com', 'data:']
 	}
 }));
 app.use(express.static('dist'));
