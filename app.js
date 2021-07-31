@@ -1,6 +1,7 @@
 const express = require('express');
 const compression = require('compression');
 const app = express();
+const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./utils/config');
@@ -23,6 +24,12 @@ const connectToMongo = async () => {
 connectToMongo();
 
 app.use(compression());
+app.use(helmet({
+	contentSecurityPolicy: true,
+	frameguard: {
+		action: 'deny'
+	}
+}));
 app.use(express.static('dist'));
 app.use(cors());
 app.use(express.json());

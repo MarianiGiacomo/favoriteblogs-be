@@ -39,7 +39,6 @@ const tokenExtractor = (request, response, next) => {
     }
   };
   const token = getTokenFrom(request);
-
   request.token = token;
   next();
 };
@@ -48,5 +47,5 @@ module.exports = {
   unknownEndpoint,
 	checkDbConnection,
   errorHandler,
-  tokenExtractor
+  tokenExtractor,
 };
