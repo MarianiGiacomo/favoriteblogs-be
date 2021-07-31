@@ -32,13 +32,11 @@ app.use(hsts({
 	preload: true,
 }));
 app.use(helmet.contentSecurityPolicy({
-	defaultSrc: 'self',
-	baseUri: 'self',
-	blockAllMixedContent: true,
-	frameAncestor: 'self',
-	imgSrc: 'self',
-	objectSrc: ['self', 'data:'],
-	scriptSrc: 'self'
+	directives:{
+		defaultSrc:["'self'"],
+		scriptSrc:["'self'"],
+		styleSrc:["'self'",'cdn.jsdelivr.net'],
+	}
 }));
 app.use(express.static('dist'));
 app.use(cors());
