@@ -2,6 +2,7 @@ const express = require('express');
 const compression = require('compression');
 const app = express();
 const helmet = require('helmet');
+const hsts = require('hsts')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./utils/config');
@@ -25,8 +26,9 @@ connectToMongo();
 
 app.use(compression());
 app.use(helmet());
-app.use(helmet.hsts({
+app.use(hsts({
 	maxAge: 63072000,
+	includeSubDomains: true,
 	preload: true,
 }));
 app.use(helmet.contentSecurityPolicy({
