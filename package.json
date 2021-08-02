@@ -9,7 +9,7 @@
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "start:test": "cross-env NODE_ENV=test node index.js",
     "lint": "eslint .",
-    "build:ui": "rm -rf dist && cd ../blog-app-fe && npm run build && cp -r dist ../blog-app-be"
+    "build:ui": "rm -rf dist && cd ../favoriteblogs-fe && npm run build && cp -r dist ../favoriteblogs-be"
   },
   "repository": {
     "type": "git",
