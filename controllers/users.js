@@ -5,6 +5,10 @@ const User = require('../models/user');
 usersRouter.get('/', async (request, response, next) => {
   try {
     const users = await User.find({}).populate('blogs', { url: 1, title: 1, author: 1 });
+		if(!users) {
+			response.statusMessage = 'No users'
+			response.status(400).end()
+		}
     const data = users.map(u => u.toJSON());
     response.json(data);
   } catch (error) {
